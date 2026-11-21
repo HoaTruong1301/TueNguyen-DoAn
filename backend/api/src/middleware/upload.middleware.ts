@@ -1,4 +1,5 @@
-﻿import multer from "multer";
+﻿
+import multer from "multer";
 import path from "node:path";
 import fs from "node:fs";
 import { randomUUID } from "node:crypto";
@@ -13,19 +14,19 @@ function safeExtension(mimetype: string): string {
   return IMAGE_EXTENSIONS[mimetype] ?? ".bin";
 }
 
-const uploadDir = path.resolve(process.cwd(), "uploads", "menu");
+// Railway: /app/uploads (Persistent Volume)
+// Local: backend/api/uploads
+const uploadRoot = process.env.UPLOAD_DIR
+  ? path.resolve(process.env.UPLOAD_DIR)
+  : path.resolve(process.cwd(), "uploads");
+
+const uploadDir = path.join(uploadRoot, "menu");
 
 fs.mkdirSync(uploadDir, { recursive: true });
 
-const storage = multer.diskStorage({
-  destination: (_req, _file, callback) => {
-    callback(null, uploadDir);
-  },
-  filename: (_req, file, callback) => {
-    // Đuôi file lấy theo loại ảnh đã kiểm tra, không tin tên file khách gửi lên
-    callback(null, `${randomUUID()}${safeExtension(file.mimetype)}`);
-  },
-});
+const bannerUploadDir = path.join(uploadRoot, "banners");
+
+fs.mkdirSync(bannerUploadDir, { recursive: true });
 
 const fileFilter: multer.Options["fileFilter"] = (
   _req,
@@ -47,8 +48,22 @@ const fileFilter: multer.Options["fileFilter"] = (
   callback(null, true);
 };
 
+function createStorage(destination: string) {
+  return multer.diskStorage({
+    destination: (_req, _file, callback) => {
+      callback(null, destination);
+    },
+    filename: (_req, file, callback) => {
+      callback(
+        null,
+        `${randomUUID()}${safeExtension(file.mimetype)}`
+      );
+    },
+  });
+}
+
 export const uploadMenuImage = multer({
-  storage,
+  storage: createStorage(uploadDir),
   fileFilter,
   limits: {
     fileSize: 5 * 1024 * 1024,
@@ -56,26 +71,8 @@ export const uploadMenuImage = multer({
   },
 });
 
-const bannerUploadDir = path.resolve(
-  process.cwd(),
-  "uploads",
-  "banners"
-);
-
-fs.mkdirSync(bannerUploadDir, { recursive: true });
-
-const bannerStorage = multer.diskStorage({
-  destination: (_req, _file, callback) => {
-    callback(null, bannerUploadDir);
-  },
-  filename: (_req, file, callback) => {
-    // Đuôi file lấy theo loại ảnh đã kiểm tra, không tin tên file khách gửi lên
-    callback(null, `${randomUUID()}${safeExtension(file.mimetype)}`);
-  },
-});
-
 export const uploadBannerImage = multer({
-  storage: bannerStorage,
+  storage: createStorage(bannerUploadDir),
   fileFilter,
   limits: {
     fileSize: 5 * 1024 * 1024,

@@ -79,7 +79,11 @@ app.use(
   })
 );
 
-app.use("/uploads", express.static(path.resolve(__dirname, "../uploads")));
+const uploadRoot = process.env.UPLOAD_DIR
+  ? path.resolve(process.env.UPLOAD_DIR)
+  : path.resolve(process.cwd(), "uploads");
+
+app.use("/uploads", express.static(uploadRoot));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/members", membersRoutes);
 app.use("/api/v1/menu", menuRoutes);
