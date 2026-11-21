@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies/
+
+# Flutter generated files
+**/.packages
+**/pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Firebase configuration
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Uploaded files
+backend/api/uploads/
+
+# Backup files
+*.bak
+*.backup
+*.bak.*
+*.backup.*
+
+# Generated or temporary files
+.dart_tool/
+.flutter-plugins/
+.flutter-plugins-dependencies
+
+# Backup files
+*.backup-*
+
+# Unexpected temporary files
+/backend/api/npm.cmd
+/backend/api/set
+/backend/api/tsx
+/backend/api/api@1.0.0
+/backend/api/{console.log({code
+/app/customer-app/cart.containsKey(food.name))
+/admin/admin-web/delivery-modal.txt
+/backend/api/resend-function.txt

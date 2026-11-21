@@ -1,0 +1,43 @@
+.audit-page { padding: 24px; color: #263247; min-width: 0; }
+.audit-page h1 { font-size: 25px; margin: 0 0 6px; }
+.audit-page header p { margin: 0 0 18px; color: #8290a4; font-size: 14px; }
+
+.audit-filters { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 16px; }
+.audit-filters label { font-size: 13px; font-weight: 600; color: #4a5a70; }
+.audit-filters input, .audit-filters select {
+  display: block; margin-top: 5px; padding: 9px 10px; font-size: 14px;
+  border: 1px solid #d3dae5; border-radius: 8px; background: #fff;
+}
+.audit-filters button { padding: 10px 16px; border: 0; border-radius: 8px; background: #176b55; color: #fff; font-weight: 600; cursor: pointer; }
+.audit-filters button:disabled { opacity: .6; }
+
+.audit-error { background: #fdecea; color: #b3261e; padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; }
+
+.audit-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.audit-kpis div { background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 14px 16px; }
+.audit-kpis span { display: block; font-size: 13px; color: #6b7a90; }
+.audit-kpis strong { font-size: 22px; }
+.audit-kpis .warn { border-color: #f1b24a; background: #fff8ea; }
+
+.audit-card { background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+.audit-card h3 { margin: 0 0 12px; font-size: 16px; }
+.audit-card-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.audit-card .check { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+
+.audit-wrap { overflow-x: auto; }
+.audit-page table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.audit-page th { text-align: left; padding: 10px; color: #6b7a90; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #e5e9f0; white-space: nowrap; }
+.audit-page td { padding: 10px; border-bottom: 1px solid #f0f3f8; vertical-align: top; }
+.audit-page .r { text-align: right; }
+.audit-page .empty { text-align: center; color: #8290a4; padding: 24px; }
+.audit-page .sub { color: #8290a4; font-size: 12px; }
+.audit-page tr.clickable { cursor: pointer; }
+.audit-page tr.clickable:hover { background: #f6f9fc; }
+.audit-page tr.flag { background: #fff8ea; }
+.flagmark { color: #c77700; font-weight: 700; }
+
+.tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.tag.cancel { background: #fdecea; color: #b3261e; }
+.tag.discount { background: #fff4de; color: #9a6400; }
+.tag.waste { background: #eef2f7; color: #4a5a70; }
+.audit-note { margin: 12px 0 0; font-size: 12px; color: #8290a4; }

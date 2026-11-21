@@ -1,0 +1,501 @@
+
+.delivery-page {
+  padding: 28px;
+  color: #243044;
+  min-height: 100%;
+  background: #f7f8fc;
+}
+
+.delivery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.delivery-eyebrow {
+  color: #8b6b43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.delivery-heading h1 {
+  margin: 8px 0;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.delivery-heading p,
+.delivery-panel-heading p {
+  color: #8490a2;
+  font-size: 13px;
+  margin: 0;
+}
+
+.delivery-refresh,
+.delivery-pagination button {
+  border: 1px solid #e1e5ed;
+  border-radius: 9px;
+  background: #fff;
+  padding: 10px 15px;
+  color: #344054;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delivery-refresh:disabled,
+.delivery-pagination button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.delivery-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.delivery-stats article {
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 13px;
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.delivery-stats article span {
+  color: #8490a2;
+  font-size: 13px;
+}
+
+.delivery-stats article strong {
+  font-size: 27px;
+  color: #27364b;
+}
+
+.delivery-panel {
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.delivery-panel-heading {
+  padding: 21px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.delivery-panel-heading h2 {
+  margin: 0 0 7px;
+  font-size: 17px;
+}
+
+.delivery-panel-heading > span {
+  background: #f1f3f8;
+  color: #667085;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.delivery-toolbar {
+  padding: 0 22px 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.delivery-toolbar input,
+.delivery-toolbar select,
+.delivery-form-grid input,
+.delivery-note-field textarea {
+  border: 1px solid #e0e5ed;
+  border-radius: 8px;
+  padding: 11px 13px;
+  font: inherit;
+  color: #344054;
+  outline: none;
+  background: #fff;
+}
+
+.delivery-toolbar input:focus,
+.delivery-toolbar select:focus,
+.delivery-form-grid input:focus,
+.delivery-note-field textarea:focus {
+  border-color: #b58b5b;
+  box-shadow: 0 0 0 3px rgba(181, 139, 91, .1);
+}
+
+.delivery-toolbar input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.delivery-toolbar select {
+  min-width: 190px;
+}
+
+.delivery-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.delivery-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.delivery-table th {
+  padding: 13px 16px;
+  color: #929bad;
+  font-size: 10px;
+  letter-spacing: .6px;
+  background: #fafbfc;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  white-space: nowrap;
+}
+
+.delivery-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f0f2f6;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.delivery-table td strong,
+.delivery-table td small {
+  display: block;
+}
+
+.delivery-table td strong {
+  color: #344054;
+  font-size: 12px;
+}
+
+.delivery-table td small {
+  color: #98a2b3;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.delivery-address-cell {
+  min-width: 180px;
+  max-width: 250px;
+  line-height: 1.6;
+  color: #667085;
+}
+
+.delivery-status {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #f2f4f7;
+  color: #667085;
+}
+
+.status-pending {
+  background: #fff4df;
+  color: #a66a00;
+}
+
+.status-assigned {
+  background: #eaf2ff;
+  color: #2761b2;
+}
+
+.status-picked_up {
+  background: #eeeaff;
+  color: #6941c6;
+}
+
+.status-out_for_delivery {
+  background: #e5f4ff;
+  color: #0877ad;
+}
+
+.status-delivered {
+  background: #e5f7ed;
+  color: #16834a;
+}
+
+.status-failed {
+  background: #fff0ed;
+  color: #c3422c;
+}
+
+.status-cancelled {
+  background: #f2f4f7;
+  color: #667085;
+}
+
+.delivery-detail-button {
+  border: 0;
+  border-radius: 7px;
+  background: #f5f0e9;
+  color: #8b653b;
+  font-weight: 700;
+  padding: 8px 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.delivery-detail-button:hover {
+  background: #eee3d5;
+}
+
+.delivery-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: #98a2b3;
+  font-size: 13px;
+}
+
+.delivery-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 18px;
+  border-top: 1px solid #edf0f5;
+}
+
+.delivery-pagination span {
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.delivery-alert {
+  padding: 12px 15px;
+  border-radius: 9px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.delivery-alert-error {
+  background: #fff0ed;
+  color: #b93824;
+}
+
+.delivery-alert-success {
+  background: #e9f8ef;
+  color: #187747;
+}
+
+.delivery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(16, 24, 40, .48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.delivery-modal {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+}
+
+.delivery-modal-heading {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  border-bottom: 1px solid #edf0f5;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delivery-modal-heading h2 {
+  margin: 7px 0 0;
+  font-size: 20px;
+}
+
+.delivery-modal-heading > button {
+  border: 0;
+  background: #f2f4f7;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #667085;
+  cursor: pointer;
+}
+
+.delivery-modal-body {
+  padding: 22px 24px;
+}
+
+.delivery-detail-section {
+  padding-bottom: 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.delivery-detail-section:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.delivery-detail-section h3 {
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.delivery-detail-grid,
+.delivery-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.delivery-detail-grid div,
+.delivery-address-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.delivery-detail-grid span,
+.delivery-address-detail span {
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+.delivery-detail-grid strong,
+.delivery-address-detail strong {
+  color: #344054;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.delivery-address-detail {
+  margin-top: 17px;
+}
+
+.delivery-form-grid label,
+.delivery-note-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.delivery-form-grid input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.delivery-primary-button {
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #8b653b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delivery-primary-button:disabled,
+.delivery-status-actions button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.delivery-current-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #667085;
+  font-size: 12px;
+}
+
+.delivery-note-field textarea {
+  resize: vertical;
+}
+
+.delivery-status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.delivery-status-actions button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 13px;
+  background: #f1ece5;
+  color: #795b38;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delivery-muted {
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .delivery-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .delivery-page {
+    padding: 16px;
+  }
+
+  .delivery-heading {
+    align-items: flex-start;
+  }
+
+  .delivery-heading h1 {
+    font-size: 22px;
+  }
+
+  .delivery-toolbar {
+    flex-direction: column;
+  }
+
+  .delivery-toolbar select {
+    width: 100%;
+  }
+
+  .delivery-detail-grid,
+  .delivery-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-modal-body {
+    padding: 18px;
+  }
+}

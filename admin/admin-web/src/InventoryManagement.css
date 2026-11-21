@@ -1,0 +1,68 @@
+.inv-page { padding: 24px; color: #263247; min-width: 0; }
+.inv-header h1 { font-size: 25px; margin: 0 0 6px; }
+.inv-header p { margin: 0 0 18px; color: #8290a4; font-size: 14px; }
+
+.inv-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; border-bottom: 1px solid #e5e9f0; }
+.inv-tabs button {
+  border: 0; background: none; padding: 10px 14px; cursor: pointer; font-weight: 600;
+  color: #6b7a90; border-bottom: 3px solid transparent;
+}
+.inv-tabs button.active { color: #176b55; border-bottom-color: #176b55; }
+
+.inv-card { background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+.inv-card h3 { margin: 0 0 12px; font-size: 16px; }
+.inv-card label { display: block; font-size: 13px; font-weight: 600; color: #4a5a70; margin-bottom: 12px; }
+.inv-card input, .inv-card select {
+  display: block; width: 100%; margin-top: 5px; padding: 9px 10px; font-size: 14px;
+  border: 1px solid #d3dae5; border-radius: 8px; background: #fff; box-sizing: border-box;
+}
+.inv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+
+.inv-lines { margin-bottom: 12px; }
+.inv-line { display: grid; grid-template-columns: minmax(180px, 2fr) 1fr 1fr 36px; gap: 8px; margin-bottom: 8px; align-items: center; }
+.inv-line input, .inv-line select { margin-top: 0 !important; }
+.inv-icon-btn { border: 1px solid #d3dae5; background: #fff; border-radius: 8px; height: 36px; cursor: pointer; }
+.inv-icon-btn:disabled { opacity: .4; cursor: not-allowed; }
+.inv-link-btn { border: 0; background: none; color: #176b55; font-weight: 600; cursor: pointer; padding: 4px 0; }
+.inv-link-btn.danger { color: #c0392b; }
+
+.inv-actions { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-wrap: wrap; margin-top: 8px; }
+.inv-actions strong { margin-right: auto; }
+.inv-primary, .inv-secondary, .inv-danger { border: 0; border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+.inv-primary { background: #176b55; color: #fff; }
+.inv-secondary { background: #eef2f7; color: #263247; }
+.inv-danger { background: #c0392b; color: #fff; }
+.inv-primary:disabled, .inv-secondary:disabled, .inv-danger:disabled { opacity: .6; cursor: wait; }
+
+.inv-msg { padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 14px; }
+.inv-msg.ok { background: #e7f6ef; color: #176b55; }
+.inv-msg.err { background: #fdecea; color: #b3261e; }
+
+.inv-toolbar { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+.inv-toolbar select { width: auto !important; min-width: 180px; margin-top: 0 !important; }
+.inv-check { display: flex !important; align-items: center; gap: 8px; margin: 0 !important; font-weight: 500 !important; }
+.inv-check input { width: auto !important; margin: 0 !important; }
+
+.inv-table-wrap { overflow-x: auto; }
+.inv-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.inv-table th { text-align: left; padding: 10px; color: #6b7a90; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #e5e9f0; white-space: nowrap; }
+.inv-table td { padding: 10px; border-bottom: 1px solid #f0f3f8; vertical-align: top; }
+.inv-table .r { text-align: right; }
+.inv-table .neg { color: #c0392b; font-weight: 600; }
+.inv-table .pos { color: #176b55; font-weight: 600; }
+.inv-empty { text-align: center; color: #8290a4; padding: 24px !important; }
+.inv-muted, .inv-hint { color: #8290a4; font-size: 12px; }
+.inv-hint { margin: -6px 0 12px; font-size: 13px; }
+
+.inv-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.inv-badge.ok, .inv-badge.po-received { background: #e7f6ef; color: #176b55; }
+.inv-badge.low, .inv-badge.po-ordered { background: #fff4de; color: #9a6400; }
+.inv-badge.negative, .inv-badge.po-cancelled { background: #fdecea; color: #b3261e; }
+
+.inv-modal { position: fixed; inset: 0; background: rgba(15, 23, 42, .45); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 16px; }
+.inv-modal-body { background: #fff; border-radius: 12px; padding: 20px; width: min(640px, 100%); max-height: 90vh; overflow: auto; }
+
+@media (max-width: 720px) {
+  .inv-line { grid-template-columns: 1fr 1fr 36px; }
+  .inv-line select { grid-column: 1 / -1; }
+}
