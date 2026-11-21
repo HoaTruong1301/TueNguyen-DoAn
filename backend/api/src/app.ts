@@ -24,6 +24,9 @@ dotenv.config();
 
 const app = express();
 
+// Railway reverse proxy
+app.set("trust proxy", 1);
+
 const PORT = Number(process.env.PORT || 3000);
 
 // ============================================================
