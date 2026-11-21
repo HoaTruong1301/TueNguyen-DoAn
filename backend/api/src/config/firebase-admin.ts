@@ -18,21 +18,29 @@ function initializeFirebaseAdmin() {
     return existingApp;
   }
 
-  const serviceAccountPath = path.resolve(
-    process.cwd(),
-    process.env.FIREBASE_SERVICE_ACCOUNT_PATH ||
-      "./secrets/firebase-service-account.json"
-  );
+  let serviceAccount: ServiceAccount;
 
-  if (!fs.existsSync(serviceAccountPath)) {
-    throw new Error(
-      `Firebase service account not found: ${serviceAccountPath}`
+  const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+
+  if (serviceAccountJson) {
+    serviceAccount = JSON.parse(serviceAccountJson) as ServiceAccount;
+  } else {
+    const serviceAccountPath = path.resolve(
+      process.cwd(),
+      process.env.FIREBASE_SERVICE_ACCOUNT_PATH ||
+        "./secrets/firebase-service-account.json"
     );
-  }
 
-  const serviceAccount = JSON.parse(
-    fs.readFileSync(serviceAccountPath, "utf8")
-  ) as ServiceAccount;
+    if (!fs.existsSync(serviceAccountPath)) {
+      throw new Error(
+        `Firebase service account not found: ${serviceAccountPath}`
+      );
+    }
+
+    serviceAccount = JSON.parse(
+      fs.readFileSync(serviceAccountPath, "utf8")
+    ) as ServiceAccount;
+  }
 
   return initializeApp({
     credential: cert(serviceAccount)
